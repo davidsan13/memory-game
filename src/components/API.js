@@ -37,10 +37,10 @@ export default function Pokemon() {
       //   pokemonArray.push(pokemonData);
       // });
       const pokemonArray = response.map(async (item) => {
-        await item.json()
+        await item.json();
       });
 
-      console.log(pokemonArray)
+      console.log(pokemonArray);
       // const response = await fetch("https://pokeapi.co/api/v2/pokemon/1/")
       // const pokemonData = await response.json();
       // const pokemonArray = [];
