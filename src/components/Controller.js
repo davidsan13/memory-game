@@ -1,6 +1,6 @@
 const Controller = () => {
   function shuffleArray(allArray) {
-   let array = [...allArray]
+    const array = [...allArray]
     for (let i = array.length - 1; i > 0; i -= 1) {
       const j = Math.floor(Math.random() * (i + 1));
       const temp = array[i];
@@ -8,6 +8,10 @@ const Controller = () => {
       array[j] = temp;
     }
     return array;
+  }
+
+  function isClick() {
+    
   }
   return {shuffleArray};
 }
