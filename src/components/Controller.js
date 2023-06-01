@@ -10,10 +10,18 @@ const Controller = () => {
     return array;
   }
 
-  function isClick() {
+  function isClick(id, array) {
+    const data = array.find((item) => item.id == id);
+    if(data.click === true) {
+      console.log('Gameover');
+    } else {
+      console.log('Score + 1');
+    }
+  }
+  function resetGame() {
     
   }
-  return {shuffleArray};
+  return {shuffleArray, isClick};
 }
 
-export default Controller
+export default Controller;
