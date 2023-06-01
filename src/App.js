@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import uniqid from 'uniqid';
-import './App.css';
+// import './App.css';
 import Main from './components/Main';
+import Header from './components/Header'
 import './assets/style.css';
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
     const results = [];
     const pokemons = [];
     console.log('Requesting Data');
-    for (let i = 1; i <= 2; i += 1) {
+    for (let i = 1; i <= 20; i += 1) {
       const url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
       results.push(fetch(url));
     }
@@ -52,9 +53,8 @@ function App() {
   }, [allPokemon]);
   return (
     <div className="App">
-      <header className="App-header">
-        <Main allPokemon={allPokemon} updateArray={updateArray} />
-      </header>
+      <Header></Header>
+      <Main allPokemon={allPokemon} updateArray={updateArray} />
     </div>
   );
 }

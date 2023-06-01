@@ -55,13 +55,47 @@ html {
   font-size: 62.5%;
   font-family: sans-serif;
 }
-
-.card {
-  border: 1px solid white;
+.header {
+  height: 5rem;
+  text-align: center;
+  padding: auto, 0;
+  font-size: 2rem;
 }
-.card-container {
- display: grid;
- grid-template-columns: 1fr 1fr 1fr 1fr;
- gap: 1rem;
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .score-container {
+    width: 75%;
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    // margin: 1rem;
+    background-color: red;
+  }
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    .card {
+      text-align: center;
+      border: 1px solid white;
+      padding: .5rem;
+    }
+  }
+}
 
+
+
+
+
+#root{
+  // overflow: hidden;
+  // height: 100vh;
+}
+
+.App {
+  // height: 100%;
 }
