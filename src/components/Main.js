@@ -2,12 +2,13 @@
 import React, { useState, useEffect } from 'react';
 import Controller from './Controller';
 import Card from './Card';
-
+import Gameover from './Gameover';
 // eslint-disable-next-line react/prop-types
 export default function Main({ allPokemon, updateArray }) {
   const [clickedPokemons, setClickedPokemons] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
+  const [isOver, setIsOver] =useState(false);
   useEffect(() => {
     // eslint-disable-next-line no-console
     console.log('mount');
@@ -43,7 +44,6 @@ export default function Main({ allPokemon, updateArray }) {
           {bestScore}
         </h1>
       </div>
-
       <Card allPokemon={allPokemon} updateCard={playRound} />
     </div>
   );
