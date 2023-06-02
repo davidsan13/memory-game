@@ -60,9 +60,20 @@ html {
 
 .header {
   height: 5rem;
-  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: auto, 0;
   font-size: 2rem;
+  font-weight: bold;
+  background-color: #f14545;
+  border-bottom: 3px solid black;
 }
 
 .main {
@@ -76,10 +87,12 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #f2f3f5;
 }
 
 .main .score-container {
   width: 75%;
+  height: 4rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -87,10 +100,10 @@ html {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  justify-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  background-color: red;
+  font-size: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main .card-container {
@@ -103,7 +116,19 @@ html {
 
 .main .card-container .card {
   text-align: center;
-  border: 1px solid white;
+  font-size: 1.2rem;
   padding: .5rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  cursor: pointer;
+}
+
+.main .card-container .card:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 /*# sourceMappingURL=style.css.map */
