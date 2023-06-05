@@ -58,8 +58,12 @@ html {
   font-family: sans-serif;
 }
 
+.root {
+  height: 100%;
+}
+
 .header {
-  height: 5rem;
+  height: 11rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -70,16 +74,31 @@ html {
       -ms-flex-align: center;
           align-items: center;
   padding: auto, 0;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: bold;
   background-color: #f14545;
   border-bottom: 3px solid black;
+  color: yellow;
+}
+
+.header h1 {
+  -webkit-text-stroke: 2px #385ba9;
+}
+
+#root {
+  height: 90%;
+  background-color: #0c0b0b;
+}
+
+.App {
+  height: 95%;
 }
 
 .main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -107,6 +126,8 @@ html {
 }
 
 .main .card-container {
+  height: 75%;
+  width: 50%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr;

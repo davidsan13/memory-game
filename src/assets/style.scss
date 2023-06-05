@@ -55,24 +55,39 @@ html {
   font-size: 62.5%;
   font-family: sans-serif;
 }
-
+.root {
+  height: 100%;
+}
 .header {
-  height: 5rem;
+  height: 11rem;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: auto, 0;
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: bold;
   background-color: rgb(241, 69, 69);
   border-bottom: 3px solid black;
+  color: rgb(255, 255, 0);
+  h1 {
+    -webkit-text-stroke: 2px #385ba9;
 
+  }
+}
+#root {
+  height: 90%;
+  background-color: rgb(12, 11, 11);
+}
+.App {
+  height: 95%;
 }
 .main {
   display: flex;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   background-color: #f2f3f5;
+  // background-color: red;
   .score-container {
     width: 75%;
     height: 4rem;
@@ -86,6 +101,8 @@ html {
     // background-color: red;
   }
   .card-container {
+    height: 75%;
+    width: 50%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;

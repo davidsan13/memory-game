@@ -8,6 +8,7 @@ import './assets/style.css';
 function App() {
   const initialData = JSON.parse(localStorage.getItem('pokemonList')) || [];
   const [allPokemon, setPokemon] = useState(initialData || []);
+  const [isLoading, setIsLoading] = useState(true);
 
   function updateArray(array) {
     setPokemon(array);
@@ -34,13 +35,15 @@ function App() {
       localStorage.setItem('pokemonList', JSON.stringify(pokemons));
       setPokemon((prevState) => [...prevState, pokemon]);
     });
+    setIsLoading(false);
   }
 
   async function localSave() {
     if (allPokemon.length === 0) {
       await getData();
     } else {
-      console.log('LocalStorage has Datad');
+      console.log('LocalStorage has Data');
+      setIsLoading(false);
     }
   }
 
@@ -54,7 +57,7 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <Main allPokemon={allPokemon} updateArray={updateArray} />
+      {isLoading ? <h1>Loading </h1> : <Main allPokemon={allPokemon} updateArray={updateArray} /> }
     </div>
   );
 }
