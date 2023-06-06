@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import uniqid from 'uniqid';
 // import './App.css';
 import Main from './components/Main';
-import Header from './components/Header'
+import Header from './components/Header';
+import Loading from './components/Loading';
 import './assets/style.css';
 
 function App() {
@@ -35,7 +36,6 @@ function App() {
       localStorage.setItem('pokemonList', JSON.stringify(pokemons));
       setPokemon((prevState) => [...prevState, pokemon]);
     });
-    setIsLoading(false);
   }
 
   async function localSave() {
@@ -43,21 +43,22 @@ function App() {
       await getData();
     } else {
       console.log('LocalStorage has Data');
-      setIsLoading(false);
     }
   }
 
   useEffect(() => {
     localSave();
   }, []);
+
   useEffect(() => {
-    console.log('update');
-    console.log(allPokemon);
+    setTimeout(()=> {
+      setIsLoading(false);
+    }, 5000);
   }, [allPokemon]);
   return (
     <div className="App">
-      <Header></Header>
-      {isLoading ? <h1>Loading </h1> : <Main allPokemon={allPokemon} updateArray={updateArray} /> }
+      <Header />
+      {isLoading ? <Loading /> : <Main allPokemon={allPokemon} updateArray={updateArray} /> }
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default function Main({ allPokemon, updateArray }) {
   const [clickedPokemons, setClickedPokemons] = useState([]);
   const [currentScore, setCurrentScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
-  const [isOver, setIsOver] =useState(false);
+  const [isOver, setIsOver] = useState(false);
   useEffect(() => {
     // eslint-disable-next-line no-console
     console.log('mount');
@@ -19,6 +19,7 @@ export default function Main({ allPokemon, updateArray }) {
     if (clickedPokemons.includes(id)) {
       setBestScore((prevState) => Math.max(prevState, currentScore));
       // eslint-disable-next-line no-use-before-define
+      setIsOver(true)
       resetGame();
     } else {
       setCurrentScore((prevState) => prevState + 1);
