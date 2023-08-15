@@ -4,6 +4,7 @@ import uniqid from 'uniqid';
 import Main from './components/Main';
 import Header from './components/Header';
 import Loading from './components/Loading';
+import Footer from './components/Footer'
 import './assets/style.css';
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
     <div className="App">
       <Header />
       {isLoading ? <Loading /> : <Main allPokemon={allPokemon} updateArray={updateArray} /> }
+    
     </div>
   );
 }

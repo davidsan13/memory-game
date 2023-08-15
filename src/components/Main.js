@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Controller from './Controller';
 import Card from './Card';
 import Gameover from './Gameover';
+import Footer from './Footer';
 // eslint-disable-next-line react/prop-types
 export default function Main({ allPokemon, updateArray }) {
   const [clickedPokemons, setClickedPokemons] = useState([]);
@@ -46,6 +47,7 @@ export default function Main({ allPokemon, updateArray }) {
         </h1>
       </div>
       <Card allPokemon={allPokemon} updateCard={playRound} />
+      <Footer/>
     </div>
   );
 }
