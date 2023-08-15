@@ -58,6 +58,14 @@ html {
   font-family: sans-serif;
 }
 
+#root {
+  height: 100%;
+}
+
+.App {
+  height: 100%;
+}
+
 .header {
   height: 7rem;
   display: -webkit-box;
@@ -100,6 +108,7 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
